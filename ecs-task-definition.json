@@ -1,0 +1,24 @@
+{
+    "family": "sctp-cloud-infra",
+    "executionRoleArn": "arn:aws:iam::255945442255:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "sctp-cloud-infra",
+            "image": "255945442255.dkr.ecr.ap-southeast-1.amazonaws.com/sctp-cloud-infra:latest",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
